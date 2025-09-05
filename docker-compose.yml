@@ -1,0 +1,17 @@
+services:
+  cdn-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    volumes:
+     - ./www/static/positions:/app/positions
+     - ./www/static/memes:/app/memes
+     - ./www/static/winnerMemes:/app/winnerMemes
+    command: python main.py
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
