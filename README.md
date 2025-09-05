@@ -30,6 +30,6 @@ with open(cat_gif, 'rb') as f:
 
 files_data = {'file': ('cat-dancing.gif', cat_data, 'image/gif')}
 response1 = requests.post(post_url, files=files_data)
-print(response1)
+print(response1) ##now the image was uploaded to OrbitNTNU's server.
 ```
 This API is meant to run on OrbitNTNU's server.
